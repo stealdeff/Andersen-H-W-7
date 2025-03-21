@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time page</title>
+    <link rel="stylesheet" href="./styles/time_page.css">
 </head>
 
 <body>
@@ -15,11 +16,25 @@
         <button id="stopwatch-reset">Reset</button>
         <button id="stopwatch-stop">Stop</button>
     </div>
+
+
     <div class="timer-container">
         <h1>Timer</h1>
-        <label for="time">Enter time</label>
-        <input type="text" id="timer-input" maxlength="6" placeholder="HH:MM:SS" value="00:00:00">
+        <div class="timer">
+            <input type="text" id="input-hours" class="timer__item timer__hours" value="00" maxlength="2"
+                placeholder="HH">
+            <div class="separator">:</div>
+            <input type="text" id="input-minutes" class="timer__item timer__minutes" value="00" maxlength="2"
+                placeholder="MM">
+            <div class="separator">:</div>
+            <input type="text" id="input-seconds" class="timer__item timer__seconds" value="00" maxlength="2"
+                placeholder="SS">
+            <button id="set-timer">Set Timer</button>
+        </div>
+        <div id="timer-display">00:00:00</div>
+    </div>
     <script src="script/time_page.js"></script>
+    </div>
 </body>
 
 </html>

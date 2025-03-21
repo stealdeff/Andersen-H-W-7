@@ -1,0 +1,43 @@
+.timer-container {
+  margin-left: 5vw;
+}
+
+#stopwatch-display {
+  margin-bottom: 2vh;
+  margin-left: -0.1vw;
+  font-size: 2rem;
+}
+
+.timer {
+  display: grid;
+  grid-template-columns: 1.5rem 0.5rem 1.5rem 0.5rem 1.5rem 0.5rem 1.5rem;
+  justify-items: center;
+  align-items: center;
+  margin-bottom: 2vh;
+}
+
+.timer__item {
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.separator {
+  font-size: 1.5rem;
+}
+
+.stopwatch-container {
+  margin-left: 5vw;
+
+}
+
+#set-timer {
+  margin-left: 3vw;
+}
+
+#timer-display {
+  margin-top: 2vh;
+  margin-left: -0.1vw;
+  font-size: 2rem;
+}

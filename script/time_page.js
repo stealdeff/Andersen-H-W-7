@@ -28,4 +28,41 @@ stopwatchStop.addEventListener('click', () => {
     clearInterval(interval)
     interval = null
 })
+let countdown;
+const inputHours = document.getElementById('input-hours');
+const inputMinutes = document.getElementById('input-minutes');
+const inputSeconds = document.getElementById('input-seconds');
+const setTimerButton = document.getElementById('set-timer');
+const timerDisplay = document.getElementById('timer-display');
+
+setTimerButton.addEventListener('click', () => {
+    const hours = parseInt(inputHours.value) || 0;
+    const minutes = parseInt(inputMinutes.value) || 0;
+    const seconds = parseInt(inputSeconds.value) || 0;
+
+    const totalTime = (hours * 3600) + (minutes * 60) + seconds
+
+    clearInterval(countdown);
+    startTimer(totalTime);
+});
+
+function formatTime(totalSeconds) {
+    const h = Math.floor(totalSeconds / 3600);
+    const m = Math.floor((totalSeconds % 3600) / 60);
+    const s = totalSeconds % 60;
+
+
+    return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+}
+function startTimer(seconds) {
+    countdown = setInterval(() => {
+        if (seconds <= 0) {
+            clearInterval(countdown);
+            alert("Time's up!");
+            return;
+        }
+        seconds--;
+        timerDisplay.textContent = formatTime(seconds);
+    }, 1000);
+}
 
